@@ -61,6 +61,36 @@ class BestSellerListViewItem extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(
+            width: 20,
+          ),
+          const Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Harry Potter and the Goblet of Fire',
+                ),
+                Text(
+                  'J.K.Rowling',
+                ),
+                Row(
+                  children: [
+                    Text(
+                      '19.99 \u{20AC}',
+                    ),
+                    Spacer(),
+                    Icon(
+                      Icons.star,
+                      size: 16,
+                      color: Colors.yellow,
+                    ),
+                    Text('4.8 (2390)')
+                  ],
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
