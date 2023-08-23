@@ -10,7 +10,7 @@ class BestSellerListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsetsDirectional.only(end: 30),
+      padding: const EdgeInsetsDirectional.only(end: 20),
       child: Row(
         children: [
           SizedBox(
