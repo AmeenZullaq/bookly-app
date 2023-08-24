@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/utils/assets.dart';
 
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+class CustomBookDetailsAppBar extends StatelessWidget {
+  const CustomBookDetailsAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsetsDirectional.only(
-        bottom: 30,
+        start: 20,
         end: 20,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.asset(
-            AssetsData.logo,
-            height: 18,
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.close,
+            ),
           ),
           IconButton(
             onPressed: () {},
             icon: const Icon(
-              Icons.search,
-              size: 22,
+              Icons.shopping_cart,
             ),
           ),
         ],
