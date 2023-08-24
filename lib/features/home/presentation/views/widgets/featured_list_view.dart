@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'custom_list_view_item.dart';
+import 'custom_book_image.dart';
 
 class FeaturedListView extends StatelessWidget {
   const FeaturedListView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height * .3,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return const CustomListViewItem();
+          return const CustomBookImage();
         },
         separatorBuilder: (context, index) {
           return const SizedBox(
