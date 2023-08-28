@@ -34,9 +34,7 @@ class BookRating extends StatelessWidget {
           opacity: .5,
           child: Text(
             '(2390)',
-            style: Styles.textStyle14.copyWith(
-              fontWeight: FontWeight.w600
-            ),
+            style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w600),
           ),
         ),
       ],
