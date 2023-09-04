@@ -16,7 +16,9 @@ class SimilarBooksListView extends StatelessWidget {
         child: ListView.separated(
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return const CustomBookImage();
+            return const CustomBookImage(
+              imageUrl: 'https://www.pngegg.com/ar/png-pwkfx',
+            );
           },
           separatorBuilder: (context, index) {
             return const SizedBox(

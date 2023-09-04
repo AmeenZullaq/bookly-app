@@ -15,7 +15,9 @@ class BookDetailsSection extends StatelessWidget {
         const CustomBookDetailsAppBar(),
         SizedBox(
           height: MediaQuery.of(context).size.height * .3,
-          child: const CustomBookImage(),
+          child: const CustomBookImage(
+            imageUrl: 'https://www.pngegg.com/ar/png-pwkfx',
+          ),
         ),
         const SizedBox(
           height: 43,
