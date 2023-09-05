@@ -16,7 +16,8 @@ class BookDetailsSection extends StatelessWidget {
         SizedBox(
           height: MediaQuery.of(context).size.height * .3,
           child: const CustomBookImage(
-            imageUrl: 'https://www.pngegg.com/ar/png-pwkfx',
+            imageUrl:
+                'https://i.pinimg.com/736x/ac/8a/47/ac8a476a144d3d2df382aeda298fa583.jpg',
           ),
         ),
         const SizedBox(
@@ -43,6 +44,8 @@ class BookDetailsSection extends StatelessWidget {
           height: 18,
         ),
         const BookRating(
+          averageRating: 5,
+          ratingCount: 5,
           mainAxisAlignment: MainAxisAlignment.center,
         ),
         const SizedBox(
