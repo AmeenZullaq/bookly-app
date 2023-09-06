@@ -14,14 +14,14 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         const CustomBookDetailsAppBar(),
         SizedBox(
-          height: MediaQuery.of(context).size.height * .3,
+          height: MediaQuery.of(context).size.height * .32,
           child: const CustomBookImage(
             imageUrl:
                 'https://i.pinimg.com/736x/ac/8a/47/ac8a476a144d3d2df382aeda298fa583.jpg',
           ),
         ),
         const SizedBox(
-          height: 43,
+          height: 35,
         ),
         const Text(
           'The Jungle Book',
@@ -49,7 +49,7 @@ class BookDetailsSection extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
         ),
         const SizedBox(
-          height: 37,
+          height: 35,
         ),
         const BooksAction(),
       ],
