@@ -21,7 +21,10 @@ class NewestBooksListViewItem extends StatelessWidget {
       padding: const EdgeInsetsDirectional.only(end: 20),
       child: GestureDetector(
         onTap: () {
-          GoRouter.of(context).push(AppRouter.kBookDetailsView);
+          GoRouter.of(context).push(
+            AppRouter.kBookDetailsView,
+            extra: bookModel,
+          );
         },
         child: Row(
           children: [
