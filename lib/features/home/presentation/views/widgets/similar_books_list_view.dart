@@ -20,11 +20,13 @@ class SimilarBooksListView extends StatelessWidget {
             child: SizedBox(
               height: MediaQuery.of(context).size.height * .15,
               child: ListView.separated(
+                physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   return CustomBookImage(
                     imageUrl:
-                        state.books[index].volumeInfo.imageLinks.thumbnail,
+                        state.books[index].volumeInfo.imageLinks?.thumbnail ??
+                            '',
                   );
                 },
                 separatorBuilder: (context, index) {

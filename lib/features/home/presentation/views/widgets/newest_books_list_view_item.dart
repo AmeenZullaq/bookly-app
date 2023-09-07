@@ -31,7 +31,7 @@ class NewestBooksListViewItem extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * .17,
               child: CustomBookImage(
-                imageUrl: bookModel.volumeInfo.imageLinks.thumbnail,
+                imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? '',
               ),
             ),
             const SizedBox(
