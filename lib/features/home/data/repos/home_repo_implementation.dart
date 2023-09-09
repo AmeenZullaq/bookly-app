@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:my_bookly/core/errors/failure.dart';
 import 'package:my_bookly/core/utils/api_service.dart';
-import 'package:my_bookly/features/home/data/models/book_model/book_model.dart';
+import 'package:my_bookly/core/models/book_model/book_model.dart';
 import 'package:my_bookly/features/home/data/repos/home_repo.dart';
 
 class HomeRepoImpl implements HomeRepo {

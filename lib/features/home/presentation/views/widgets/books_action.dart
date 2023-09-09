@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../../core/utils/functions/custom_launch_url.dart';
 import '../../../../../core/widgets/custom_button.dart';
-import '../../../data/models/book_model/book_model.dart';
+import '../../../../../core/models/book_model/book_model.dart';
 
 class BooksAction extends StatelessWidget {
   const BooksAction({
