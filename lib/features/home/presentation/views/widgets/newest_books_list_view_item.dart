@@ -7,8 +7,8 @@ import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
 import 'book_rating.dart';
 
-class NewestBooksListViewItem extends StatelessWidget {
-  const NewestBooksListViewItem({
+class BooksListViewItem extends StatelessWidget {
+  const BooksListViewItem({
     super.key,
     required this.bookModel,
   });
@@ -54,7 +54,7 @@ class NewestBooksListViewItem extends StatelessWidget {
                     height: 3,
                   ),
                   Text(
-                    bookModel.volumeInfo.authors![0],
+                    bookModel.volumeInfo.authors?[0] ?? '',
                     style: Styles.textStyle14,
                   ),
                   const SizedBox(

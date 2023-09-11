@@ -17,7 +17,7 @@ class NewestBooksListView extends StatelessWidget {
             padding: EdgeInsets.zero,
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
-              return NewestBooksListViewItem(
+              return BooksListViewItem(
                 bookModel: state.books[index],
               );
             },
