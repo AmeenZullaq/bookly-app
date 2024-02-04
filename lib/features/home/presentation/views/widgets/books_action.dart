@@ -31,7 +31,8 @@ class BooksAction extends StatelessWidget {
           Expanded(
             child: CustomButton(
               onPressed: () {
-                customLaunchUrl(context, "bookModel.volumeInfo.previewLink");
+                print(bookModel.volumeInfo.previewLink);
+                customLaunchUrl(context, bookModel.volumeInfo.previewLink);
               },
               text: getText(bookModel),
               backGroundColor: const Color(0xffEF8262),

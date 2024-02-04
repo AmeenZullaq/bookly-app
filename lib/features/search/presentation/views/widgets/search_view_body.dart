@@ -55,7 +55,7 @@ class _SearchViewBodyState extends State<SearchViewBody> {
               height: 16,
             ),
             const Expanded(
-              child: ResultSearchListView(),
+              child: ResultSearchListView() ,
             ),
           ],
         ),
