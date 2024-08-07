@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/utils/styles.dart';
 import 'similar_books_list_view.dart';
 
@@ -11,8 +12,8 @@ class SimilarBooksSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsetsDirectional.only(
-            start: 30,
+          padding: EdgeInsetsDirectional.only(
+            start: 30.w,
           ),
           child: Text(
             'You can also like',
@@ -21,8 +22,8 @@ class SimilarBooksSection extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(
-          height: 16,
+        SizedBox(
+          height: 16.h,
         ),
         const SimilarBooksListView(),
       ],

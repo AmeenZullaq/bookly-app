@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomSearchTextField extends StatelessWidget {
-  const CustomSearchTextField({super.key, this.onChanged, this.onPressed, this.validator});
+  const CustomSearchTextField({
+    super.key,
+    this.onChanged,
+    this.onPressed,
+    this.validator,
+  });
   final Function(String)? onChanged;
   final Function()? onPressed;
   final String? Function(String?)? validator;
-
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +41,7 @@ class CustomSearchTextField extends StatelessWidget {
       borderSide: const BorderSide(
         color: Colors.white,
       ),
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadius.circular(12.r),
     );
   }
 }

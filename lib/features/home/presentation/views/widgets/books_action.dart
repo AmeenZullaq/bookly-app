@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/utils/functions/custom_launch_url.dart';
 import '../../../../../core/widgets/custom_button.dart';
-import '../../../../../core/models/book_model/book_model.dart';
+import '../../../data/models/book_model/book_model.dart';
 
 class BooksAction extends StatelessWidget {
   const BooksAction({
@@ -14,32 +15,31 @@ class BooksAction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 38,
+      padding: EdgeInsets.symmetric(
+        horizontal: 38.w,
       ),
       child: Row(
         children: [
-          const Expanded(
+          Expanded(
             child: CustomButton(
               text: 'Free',
               borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(16),
-                topLeft: Radius.circular(16),
+                bottomLeft: Radius.circular(16.r),
+                topLeft: Radius.circular(16.r),
               ),
             ),
           ),
           Expanded(
             child: CustomButton(
               onPressed: () {
-                print(bookModel.volumeInfo.previewLink);
                 customLaunchUrl(context, bookModel.volumeInfo.previewLink);
               },
               text: getText(bookModel),
               backGroundColor: const Color(0xffEF8262),
               textColor: Colors.white,
-              borderRadius: const BorderRadius.only(
-                topRight: Radius.circular(16),
-                bottomRight: Radius.circular(16),
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(16.r),
+                bottomRight: Radius.circular(16.r),
               ),
             ),
           ),

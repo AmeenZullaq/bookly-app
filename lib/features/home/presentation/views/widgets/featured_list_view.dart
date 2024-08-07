@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_bookly/core/utils/app_router.dart';
 import 'package:my_bookly/core/widgets/custom_error_widget.dart';
@@ -36,8 +37,8 @@ class FeaturedListView extends StatelessWidget {
                 );
               },
               separatorBuilder: (context, index) {
-                return const SizedBox(
-                  width: 10,
+                return  SizedBox(
+                  width: 10.w,
                 );
               },
               itemCount: state.books.length,

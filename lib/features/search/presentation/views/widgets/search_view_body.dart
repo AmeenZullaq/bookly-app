@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_bookly/features/search/presentation/manager/search_books_cubit/search_books_cubit.dart';
 import '../../../../../core/utils/styles.dart';
 import 'custom_search_text_field.dart';
@@ -20,8 +21,8 @@ class _SearchViewBodyState extends State<SearchViewBody> {
     return Form(
       key: formKey,
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 30,
+        padding: EdgeInsets.symmetric(
+          horizontal: 30.w,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,18 +45,18 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                 }
               },
             ),
-            const SizedBox(
-              height: 16,
+            SizedBox(
+              height: 16.h,
             ),
-            const Text(
+            Text(
               'Search Result',
               style: Styles.textStyle18,
             ),
-            const SizedBox(
-              height: 16,
+            SizedBox(
+              height: 16.h,
             ),
             const Expanded(
-              child: ResultSearchListView() ,
+              child: ResultSearchListView(),
             ),
           ],
         ),

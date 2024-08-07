@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_bookly/core/widgets/custom_loading_indecator.dart';
 import 'package:my_bookly/features/home/presentation/manager/similar_books_cubit/similar_books_cubit.dart';
 
@@ -14,8 +15,8 @@ class SimilarBooksListView extends StatelessWidget {
       builder: (context, state) {
         if (state is SimilarBooksSuccess) {
           return Padding(
-            padding: const EdgeInsetsDirectional.only(
-              start: 30,
+            padding: EdgeInsetsDirectional.only(
+              start: 30.w,
             ),
             child: SizedBox(
               height: MediaQuery.of(context).size.height * .15,
@@ -30,8 +31,8 @@ class SimilarBooksListView extends StatelessWidget {
                   );
                 },
                 separatorBuilder: (context, index) {
-                  return const SizedBox(
-                    width: 10,
+                  return SizedBox(
+                    width: 10.w,
                   );
                 },
                 itemCount: state.books.length,

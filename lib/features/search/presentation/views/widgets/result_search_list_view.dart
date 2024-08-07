@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_bookly/features/home/presentation/views/widgets/newest_books_list_view_item.dart';
 import '../../../../../core/widgets/custom_error_widget.dart';
 import '../../../../../core/widgets/custom_loading_indecator.dart';
@@ -20,8 +21,8 @@ class ResultSearchListView extends StatelessWidget {
               return BooksListViewItem(bookModel: state.books[index]);
             },
             separatorBuilder: (context, index) {
-              return const SizedBox(
-                height: 20,
+              return  SizedBox(
+                height: 20.h,
               );
             },
             itemCount: state.books.length,

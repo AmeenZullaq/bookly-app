@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_bookly/core/models/book_model/book_model.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_bookly/features/home/data/models/book_model/book_model.dart';
 import '../../../../../core/utils/styles.dart';
 import 'book_rating.dart';
 import 'books_action.dart';
@@ -25,8 +26,8 @@ class BookDetailsSection extends StatelessWidget {
             imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? '',
           ),
         ),
-        const SizedBox(
-          height: 35,
+        SizedBox(
+          height: 35.h,
         ),
         Text(
           bookModel.volumeInfo.title!,
@@ -35,8 +36,8 @@ class BookDetailsSection extends StatelessWidget {
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
         ),
-        const SizedBox(
-          height: 6,
+        SizedBox(
+          height: 6.h,
         ),
         Opacity(
           opacity: .7,
@@ -48,16 +49,16 @@ class BookDetailsSection extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(
-          height: 18,
+        SizedBox(
+          height: 18.h,
         ),
         BookRating(
           averageRating: bookModel.volumeInfo.averageRating ?? 0,
           ratingCount: bookModel.volumeInfo.ratingsCount ?? 0,
           mainAxisAlignment: MainAxisAlignment.center,
         ),
-        const SizedBox(
-          height: 30,
+        SizedBox(
+          height: 30.h,
         ),
         BooksAction(
           bookModel: bookModel,

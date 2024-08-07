@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_bookly/core/utils/app_router.dart';
-import 'package:my_bookly/core/models/book_model/book_model.dart';
+import 'package:my_bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:my_bookly/features/home/presentation/views/widgets/custom_book_image.dart';
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
@@ -18,7 +19,7 @@ class BooksListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsetsDirectional.only(end: 20),
+      padding: EdgeInsetsDirectional.only(end: 20.w),
       child: GestureDetector(
         onTap: () {
           GoRouter.of(context).push(
@@ -34,8 +35,8 @@ class BooksListViewItem extends StatelessWidget {
                 imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? '',
               ),
             ),
-            const SizedBox(
-              width: 30,
+            SizedBox(
+              width: 30.w,
             ),
             Expanded(
               child: Column(
@@ -50,15 +51,15 @@ class BooksListViewItem extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(
-                    height: 3,
+                  SizedBox(
+                    height: 3.h,
                   ),
                   Text(
                     bookModel.volumeInfo.authors?[0] ?? '',
                     style: Styles.textStyle14,
                   ),
-                  const SizedBox(
-                    height: 3,
+                  SizedBox(
+                    height: 3.h,
                   ),
                   Row(
                     children: [
