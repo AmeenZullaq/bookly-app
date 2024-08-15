@@ -41,48 +41,48 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCmD16-48xk0bOglSjPfEofel7t9KmqlHo',
-    appId: '1:1058377586337:web:eee8ddf9eb805fe1f382e0',
-    messagingSenderId: '1058377586337',
-    projectId: 'bookly-app-1323f',
-    authDomain: 'bookly-app-1323f.firebaseapp.com',
-    storageBucket: 'bookly-app-1323f.appspot.com',
-    measurementId: 'G-02QD5TNS0J',
+    apiKey: 'AIzaSyBeU3hwdXcpHDFS7O6kR5he7zYLnpv23rE',
+    appId: '1:954652922597:web:70089c4c4f3d40d4773a0c',
+    messagingSenderId: '954652922597',
+    projectId: 'bookly-dc51c',
+    authDomain: 'bookly-dc51c.firebaseapp.com',
+    storageBucket: 'bookly-dc51c.appspot.com',
+    measurementId: 'G-NKZHRQJPQN',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBxWS-hM8I2z3AsuLTpT6qj2wlguGUfU-s',
-    appId: '1:1058377586337:android:c329a83fe710f345f382e0',
-    messagingSenderId: '1058377586337',
-    projectId: 'bookly-app-1323f',
-    storageBucket: 'bookly-app-1323f.appspot.com',
+    apiKey: 'AIzaSyAeaVMGvhx_F5SGkis4oBQ37pQ1PB5zrfA',
+    appId: '1:954652922597:android:ffb0d4ddaf550fe4773a0c',
+    messagingSenderId: '954652922597',
+    projectId: 'bookly-dc51c',
+    storageBucket: 'bookly-dc51c.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDcpJw2c0-8Lbty7dEc8bphIXwqtWFn9a0',
-    appId: '1:1058377586337:ios:a3da3025c56457a2f382e0',
-    messagingSenderId: '1058377586337',
-    projectId: 'bookly-app-1323f',
-    storageBucket: 'bookly-app-1323f.appspot.com',
+    apiKey: 'AIzaSyB2txcPCnE3DzOhxwS9mWZhIF3c0kzQ8yg',
+    appId: '1:954652922597:ios:51ca85f13a4d55fd773a0c',
+    messagingSenderId: '954652922597',
+    projectId: 'bookly-dc51c',
+    storageBucket: 'bookly-dc51c.appspot.com',
     iosBundleId: 'com.example.myBookly',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDcpJw2c0-8Lbty7dEc8bphIXwqtWFn9a0',
-    appId: '1:1058377586337:ios:a3da3025c56457a2f382e0',
-    messagingSenderId: '1058377586337',
-    projectId: 'bookly-app-1323f',
-    storageBucket: 'bookly-app-1323f.appspot.com',
+    apiKey: 'AIzaSyB2txcPCnE3DzOhxwS9mWZhIF3c0kzQ8yg',
+    appId: '1:954652922597:ios:51ca85f13a4d55fd773a0c',
+    messagingSenderId: '954652922597',
+    projectId: 'bookly-dc51c',
+    storageBucket: 'bookly-dc51c.appspot.com',
     iosBundleId: 'com.example.myBookly',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyCmD16-48xk0bOglSjPfEofel7t9KmqlHo',
-    appId: '1:1058377586337:web:2a4e7bff085e5c66f382e0',
-    messagingSenderId: '1058377586337',
-    projectId: 'bookly-app-1323f',
-    authDomain: 'bookly-app-1323f.firebaseapp.com',
-    storageBucket: 'bookly-app-1323f.appspot.com',
-    measurementId: 'G-KYJWG2LEYV',
+    apiKey: 'AIzaSyBeU3hwdXcpHDFS7O6kR5he7zYLnpv23rE',
+    appId: '1:954652922597:web:9d2d0f1ff1e15fde773a0c',
+    messagingSenderId: '954652922597',
+    projectId: 'bookly-dc51c',
+    authDomain: 'bookly-dc51c.firebaseapp.com',
+    storageBucket: 'bookly-dc51c.appspot.com',
+    measurementId: 'G-TTN46JBFB0',
   );
 }

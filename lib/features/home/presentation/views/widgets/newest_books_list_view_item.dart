@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_bookly/core/utils/app_router.dart';
-import 'package:my_bookly/features/home/data/models/book_model/book_model.dart';
+import 'package:my_bookly/features/home/domain/entities/book_entity.dart';
+import 'package:my_bookly/features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
+import 'package:my_bookly/features/home/presentation/manager/similar_books_cubit/similar_books_cubit.dart';
 import 'package:my_bookly/features/home/presentation/views/widgets/custom_book_image.dart';
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
@@ -11,10 +14,10 @@ import 'book_rating.dart';
 class BooksListViewItem extends StatelessWidget {
   const BooksListViewItem({
     super.key,
-    required this.bookModel,
+    required this.bookEntity,
   });
 
-  final BookModel bookModel;
+  final BookEntity bookEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +25,11 @@ class BooksListViewItem extends StatelessWidget {
       padding: EdgeInsetsDirectional.only(end: 20.w),
       child: GestureDetector(
         onTap: () {
+          BlocProvider.of<SimilarBooksCubit>(context).fetchSimilarBooks(
+              category: context.read<NewestBooksCubit>().category);
           GoRouter.of(context).push(
             AppRouter.kBookDetailsView,
-            extra: bookModel,
+            extra: bookEntity,
           );
         },
         child: Row(
@@ -32,7 +37,7 @@ class BooksListViewItem extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * .17,
               child: CustomBookImage(
-                imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? '',
+                imageUrl: bookEntity.image ?? '',
               ),
             ),
             SizedBox(
@@ -43,7 +48,7 @@ class BooksListViewItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    bookModel.volumeInfo.title!,
+                    bookEntity.title,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: Styles.textStyle20.copyWith(
@@ -55,7 +60,7 @@ class BooksListViewItem extends StatelessWidget {
                     height: 3.h,
                   ),
                   Text(
-                    bookModel.volumeInfo.authors?[0] ?? '',
+                    bookEntity.authorName ?? '',
                     style: Styles.textStyle14,
                   ),
                   SizedBox(
@@ -71,8 +76,8 @@ class BooksListViewItem extends StatelessWidget {
                       ),
                       const Spacer(),
                       BookRating(
-                        averageRating: bookModel.volumeInfo.averageRating ?? 0,
-                        ratingCount: bookModel.volumeInfo.ratingsCount ?? 0,
+                        averageRating: bookEntity.rating ?? 0,
+                        ratingCount: bookEntity.ratingsCount ?? 0,
                       ),
                     ],
                   ),

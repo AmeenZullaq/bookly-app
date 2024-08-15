@@ -1,5 +1,5 @@
 import 'package:url_launcher/url_launcher.dart';
-import 'custom)snack_bar.dart';
+import 'custom_snack_bar.dart';
 
 Future<void> customLaunchUrl(
   context,

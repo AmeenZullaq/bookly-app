@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:my_bookly/features/search/presentation/manager/search_books_cubit/search_books_cubit.dart';
 import '../../../../../core/utils/styles.dart';
 import 'custom_search_text_field.dart';
@@ -14,43 +15,65 @@ class SearchViewBody extends StatefulWidget {
 }
 
 class _SearchViewBodyState extends State<SearchViewBody> {
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  late String searchName;
   @override
   Widget build(BuildContext context) {
+    SearchBooksCubit searchBooksCubit = context.read<SearchBooksCubit>();
     return Form(
-      key: formKey,
+      key: searchBooksCubit.formKey,
       child: Padding(
         padding: EdgeInsets.symmetric(
-          horizontal: 30.w,
+          vertical: 20.h,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomSearchTextField(
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'field is required';
-                } else {
-                  return null;
-                }
-              },
-              onChanged: (value) {
-                searchName = value;
-              },
-              onPressed: () {
-                if (formKey.currentState!.validate()) {
-                  BlocProvider.of<SearchBooksCubit>(context)
-                      .fetchSearchBooks(searchName: searchName);
-                }
-              },
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10.w),
+              child: Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      GoRouter.of(context).pop();
+                    },
+                    child: Icon(
+                      Icons.arrow_back_ios_new,
+                      color: Colors.white,
+                      size: 24.sp,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 15.w,
+                  ),
+                  Expanded(
+                    child: CustomSearchTextField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'field is required';
+                        } else {
+                          return null;
+                        }
+                      },
+                      searchController: searchBooksCubit.searchController,
+                      onPressed: () {
+                        if (searchBooksCubit.formKey.currentState!.validate()) {
+                          BlocProvider.of<SearchBooksCubit>(context)
+                              .fetchSearchBooks();
+                        }
+                      },
+                    ),
+                  )
+                ],
+              ),
             ),
             SizedBox(
-              height: 16.h,
+              height: 24.h,
             ),
-            Text(
-              'Search Result',
-              style: Styles.textStyle18,
+            Padding(
+              padding: EdgeInsets.only(left: 16.w),
+              child: Text(
+                'Search Result',
+                style: Styles.textStyle18,
+              ),
             ),
             SizedBox(
               height: 16.h,

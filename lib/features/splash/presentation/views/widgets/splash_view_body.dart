@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_bookly/core/utils/app_router.dart';
@@ -25,8 +26,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   @override
   void dispose() {
-    super.dispose();
     animationController.dispose();
+    super.dispose();
   }
 
   @override
@@ -54,7 +55,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       ),
     );
     slidingAnimation =
-        Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
+        Tween<Offset>(begin: const Offset(0, 3), end: Offset.zero)
             .animate(animationController);
     animationController.forward();
   }
@@ -62,10 +63,14 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void navigateState() {
     Future.delayed(
       const Duration(
-        seconds: 3,
+        seconds: 2,
       ),
       () {
-        GoRouter.of(context).push(AppRouter.kLoginView);
+        if (FirebaseAuth.instance.currentUser != null) {
+          GoRouter.of(context).pushReplacement(AppRouter.kInterestBookView);
+        } else {
+          GoRouter.of(context).pushReplacement(AppRouter.kLoginView);
+        }
       },
     );
   }

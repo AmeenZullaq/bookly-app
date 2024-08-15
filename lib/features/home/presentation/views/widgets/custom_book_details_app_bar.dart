@@ -13,7 +13,6 @@ class CustomBookDetailsAppBar extends StatelessWidget {
         start: 20.w,
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           IconButton(
             onPressed: () {
@@ -21,12 +20,6 @@ class CustomBookDetailsAppBar extends StatelessWidget {
             },
             icon: const Icon(
               Icons.close,
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.shopping_cart,
             ),
           ),
         ],
